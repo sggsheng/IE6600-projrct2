@@ -8,8 +8,8 @@ st.write('For this project, I will show data from the 2011 Census for the Greate
 st.title('Variable Explanation')
 st.write('MedianHP: Median House Price, PopulationDensity: Population Density (People/Hectare), WorkingAge: Percentage of the population who are of working age, ObesityRate: Percentage of the adult population who are obese, LifeExpectancy: Average Life Expectancy, Unemployed: Unemployment Rate, MedianHHIncome: Median Household Income, CarsPerHH: The mean number of cars per household, OwnershipRate: The proportion of residencies which are owned (as opposed to rented), Sales: The number of residencies sold in the last year')
 
-#file_path = 'IE6600-project2/LondonData.xlsx' 
-data = pd.read_excel("LondonData.xlsx")
+file_path = 'LondonData.xlsx' 
+data = pd.read_excel(file_path)
 
 selected_columns = ['MedianHP','PopulationDensity', 'WorkingAge', 
                     'ObesityRate', 'LifeExpectancy', 'Unemployed', 
@@ -27,6 +27,8 @@ if selected_column:
     ax.set_ylabel("Density")
     st.pyplot(fig)
 
+st.title('About the relationship')
+st.write("Now you can choose two variables and observe their relationship")
 x_column = st.selectbox("Please select data for X-axis", selected_columns)
 y_column = st.selectbox("Please select data for Y-axis", selected_columns)
 
